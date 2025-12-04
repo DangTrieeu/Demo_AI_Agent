@@ -1,38 +1,70 @@
-# AI Squad Demo
+# AI Agent - Automated React App Generator
 
-Dự án này sử dụng CrewAI để tạo ra một đội ngũ AI agents tự động thiết kế, code và kiểm thử một ứng dụng React đơn giản (Login page).
+Dự án này demo một đội ngũ AI (AI Squad) tự động sử dụng **CrewAI** và **Groq (Llama 3)** để thiết kế, lập trình và kiểm thử một ứng dụng React Login hoàn chỉnh.
 
-## Yêu cầu hệ thống
+## 🤖 Đội ngũ AI (The Squad)
 
-- Python 3.10 trở lên
+Hệ thống bao gồm 3 agent chuyên biệt:
 
-## Cài đặt
+1.  **Solution Architect**: Thiết kế luồng ứng dụng và logic nghiệp vụ.
+2.  **Senior React Developer**: Viết code React sạch, sử dụng Tailwind CSS.
+3.  **QA Automation Engineer**: Viết Unit Test (Jest/RTL) để đảm bảo chất lượng code.
 
-Để chạy được script này, bạn cần cài đặt các thư viện sau:
+## 🚀 Tính năng
 
-```bash
-pip install crewai crewai-tools python-dotenv litellm
+- **Quy trình tự động hóa**: Từ thiết kế -> Code -> Test.
+- **Công nghệ**: Python (Orchestration), React + Vite (Frontend), Tailwind CSS.
+- **Hiệu năng cao**: Sử dụng model Llama 3 70b thông qua Groq API.
+
+## 🛠️ Cài đặt
+
+1.  **Clone dự án**:
+
+    ```bash
+    git clone <repository-url>
+    cd AI_Agent
+    ```
+
+2.  **Cài đặt thư viện Python**:
+
+    ```bash
+    pip install crewai crewai-tools python-dotenv
+    ```
+
+3.  **Cấu hình môi trường**:
+    - Tạo file `.env` tại thư mục gốc.
+    - Thêm Groq API Key của bạn vào:
+      ```env
+      GROQ_API_KEY=gsk_...
+      ```
+
+## 🏃‍♂️ Hướng dẫn sử dụng
+
+1.  **Chạy AI Agent**:
+
+    ```bash
+    python agent.py
+    ```
+
+    Các agent sẽ bắt đầu làm việc và tự động sinh code vào thư mục `ai-demo-login/src/`.
+    _Lưu ý: Script có thời gian nghỉ giữa các task để tránh Rate Limit của Groq._
+
+2.  **Chạy ứng dụng React**:
+    Sau khi AI hoàn thành công việc:
+    ```bash
+    cd ai-demo-login
+    npm install
+    npm run dev
+    ```
+
+## 📂 Cấu trúc dự án
+
 ```
-
-## Cấu hình
-
-1. Tạo file `.env` trong cùng thư mục với `run_ai_squad.py`.
-2. Thêm API Key của Groq vào file `.env`:
-
-```env
-GROQ_API_KEY=your_groq_api_key_here
+AI_Agent/
+├── agent.py            # Script chính điều phối AI Squad
+├── .env                # Biến môi trường (API Key)
+├── ai-demo-login/      # Dự án React (Vite)
+│   ├── src/            # Nơi chứa code do AI tạo ra (Login.jsx, App.jsx,...)
+│   └── ...
+└── README.md           # Tài liệu dự án
 ```
-
-## Chạy chương trình
-
-Mở terminal tại thư mục chứa file và chạy lệnh:
-
-```bash
-python run_ai_squad.py
-```
-
-## Cấu trúc dự án
-
-- `run_ai_squad.py`: Script chính điều phối các AI agents.
-- `.env`: File chứa biến môi trường (API Key).
-- `ai-demo-login/`: Thư mục đích nơi AI sẽ sinh ra code React.
