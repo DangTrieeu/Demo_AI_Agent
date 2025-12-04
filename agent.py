@@ -4,6 +4,10 @@ from crewai import Agent, Task, Crew, Process, LLM
 from crewai_tools import FileWriterTool
 from dotenv import load_dotenv
 
+# Tắt tính năng hỏi xem trace của CrewAI
+os.environ["CREWAI_TRACING_ENABLED"] = "false"
+os.environ["OTEL_SDK_DISABLED"] = "true"
+
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 llm = LLM(
@@ -13,9 +17,10 @@ llm = LLM(
 
 file_writer = FileWriterTool()
 
+# Script đang ở: .../AI_Agent/agent.py
+# Dự án React ở: .../AI_Agent/ai-demo-login/src/
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
-BASE_PATH = os.path.join(PROJECT_ROOT, "ai-demo-login", "src")
+BASE_PATH = os.path.join(SCRIPT_DIR, "ai-demo-login", "src")
 
 BASE_PATH = BASE_PATH.replace("\\", "/")
 
@@ -90,11 +95,16 @@ print("\n--- GIAI ĐOẠN 2: React Developer đang viết code... ---")
 print("   > Đang viết Login.jsx...")
 task_login = Task(
     description=f'''
-    Dựa trên thiết kế sau:
-    {result_design}
-
-    Hãy viết file Login component và ghi vào "{BASE_PATH}Login.jsx".
-    Sử dụng Tailwind CSS.
+    NHIỆM VỤ: Viết code cho Login component và lưu vào file.
+    
+    HƯỚNG DẪN CHI TIẾT:
+    1. Tạo nội dung code React cho Login component dựa trên thiết kế: {result_design}
+    2. Sử dụng Tailwind CSS cho giao diện đẹp.
+    3. QUAN TRỌNG: Sử dụng công cụ "FileWriterTool" để ghi file.
+    4. Đường dẫn file: "{BASE_PATH}Login.jsx"
+    5. Nội dung file phải là code thuần (raw code), KHÔNG được bao quanh bởi markdown block (```jsx).
+    6. Đảm bảo import React và các hook cần thiết.
+    7. KHÔNG được tự ý thử lại nếu gặp lỗi nhỏ, hãy kiểm tra kĩ input trước khi gọi tool.
     ''',
     expected_output='Thông báo đã ghi file Login.jsx thành công.',
     agent=developer
@@ -109,11 +119,15 @@ time.sleep(60)
 print("   > Đang viết Welcome.jsx...")
 task_welcome = Task(
     description=f'''
-    Dựa trên thiết kế sau:
-    {result_design}
+    NHIỆM VỤ: Viết code cho Welcome component và lưu vào file.
 
-    Hãy viết file Welcome component và ghi vào "{BASE_PATH}Welcome.jsx".
-    Sử dụng Tailwind CSS.
+    HƯỚNG DẪN CHI TIẾT:
+    1. Tạo nội dung code React cho Welcome component dựa trên thiết kế: {result_design}
+    2. Sử dụng Tailwind CSS.
+    3. QUAN TRỌNG: Sử dụng công cụ "FileWriterTool" để ghi file.
+    4. Đường dẫn file: "{BASE_PATH}Welcome.jsx"
+    5. Nội dung file phải là code thuần (raw code), KHÔNG được bao quanh bởi markdown block.
+    6. KHÔNG được tự ý thử lại các phương án khác nhau, hãy làm đúng ngay lần đầu.
     ''',
     expected_output='Thông báo đã ghi file Welcome.jsx thành công.',
     agent=developer
@@ -128,11 +142,15 @@ time.sleep(60)
 print("   > Đang viết App.jsx...")
 task_app = Task(
     description=f'''
-    Dựa trên thiết kế sau:
-    {result_design}
+    NHIỆM VỤ: Viết code cho App component và lưu vào file.
 
-    Hãy viết file App.jsx (logic chính, state management) và ghi vào "{BASE_PATH}App.jsx".
-    Kết nối Login và Welcome.
+    HƯỚNG DẪN CHI TIẾT:
+    1. Tạo nội dung code React cho App.jsx để kết nối Login và Welcome.
+    2. Logic: {result_design}
+    3. QUAN TRỌNG: Sử dụng công cụ "FileWriterTool" để ghi file.
+    4. Đường dẫn file: "{BASE_PATH}App.jsx"
+    5. Nội dung file phải là code thuần (raw code), KHÔNG được bao quanh bởi markdown block.
+    6. Đảm bảo import đúng đường dẫn các component con (./Login, ./Welcome).
     ''',
     expected_output='Thông báo đã ghi file App.jsx thành công.',
     agent=developer
@@ -147,9 +165,16 @@ time.sleep(60)
 print("\n--- GIAI ĐOẠN 3: QA Engineer đang viết test... ---")
 task_testing = Task(
     description=f'''
-    Dựa trên code Login.jsx vừa được tạo (và kết quả sau: {result_coding}), hãy viết một file unit test sử dụng Jest/RTL.
-    Kiểm tra 2 trường hợp: 1) render thành công, 2) gọi hàm onLogin khi nút được bấm.
-    Lưu file test vào "{BASE_PATH}Login.test.js".
+    NHIỆM VỤ: Viết Unit Test cho Login component.
+
+    HƯỚNG DẪN CHI TIẾT:
+    1. Dựa trên code Login.jsx và App.jsx vừa tạo.
+    2. Viết test case sử dụng Jest và React Testing Library.
+    3. Test case 1: Render thành công (tìm text "Đăng nhập" hoặc tương tự).
+    4. Test case 2: Gọi hàm onLogin khi nhập đúng admin/123 và bấm nút.
+    5. QUAN TRỌNG: Sử dụng công cụ "FileWriterTool" để ghi file.
+    6. Đường dẫn file: "{BASE_PATH}Login.test.js"
+    7. Nội dung file phải là code thuần.
     ''',
     expected_output='Thông báo đã ghi file test thành công: Login.test.js.',
     agent=qa_tester
@@ -157,6 +182,9 @@ task_testing = Task(
 
 crew_phase_3 = Crew(agents=[qa_tester], tasks=[task_testing], verbose=True)
 result_testing = crew_phase_3.kickoff()
+
+print("Giai đoạn 3 hoàn tất. Nghỉ 60s...")
+time.sleep(60)
 
 print("\n######################")
 print("QUY TRÌNH HOÀN THÀNH!")
