@@ -4,7 +4,7 @@ Sau khi khắc phục lỗi mã hóa ký tự (encoding) bằng cách thiết l�
 
 ## 1. Khởi tạo
 
-- **Log**: `DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src/`
+- **Log**: `DEBUG: BASE_PATH set to: AI_Agent/ai-demo-login/src/`
 - **Giải thích**: Script xác định thư mục đích để lưu các file mã nguồn là `ai-demo-login/src`.
 
 ## 2. Giai đoạn 2: Viết Code (React Developer)
@@ -54,14 +54,14 @@ Quy trình tự động hóa đã hoàn tất thành công (`QUY TRÌNH HOÀN TH
 2.  Viết code React hoàn chỉnh (Giai đoạn 2).
 3.  Viết test case đảm bảo chất lượng (Giai đoạn 3).
 
-Tất cả các file source code đã được sinh ra tại thư mục: `F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src/`.
+Tất cả các file source code đã được sinh ra tại thư mục: `AI_Agent/ai-demo-login/src/`.
 
 ---
 
 ## Full Execution Log
 
 ```text
-DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src/
+DEBUG: BASE_PATH set to: AI_Agent/ai-demo-login/src/
 
 🚀 Crew: crew
 └── 📋 Task: 2aa84ef5-b39b-4afe-9697-e3f432ae04c1
@@ -97,7 +97,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 │  {                                                                      │
 │    "filename": "Login.jsx",                                             │
 │    "directory":                                                         │
-│  "F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src"  │
+│  "AI_Agent/ai-demo-login/src"  │
 │  ,                                                                      │
 │    "overwrite": "true",                                                 │
 │    "content": "import React, { useState } from 'react';\\n\\nconst Login  │
@@ -122,7 +122,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 ╭────────────────────────────── Tool Output ──────────────────────────────╮
 │                                                                         │
 │  Content successfully written to                                        │
-│  F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src\\L  │
+│  AI_Agent/ai-demo-login/src\\L  │
 │  ogin.jsx                                                               │
 │                                                                         │
 ╰─────────────────────────────────────────────────────────────────────────╯
@@ -165,7 +165,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 │  {                                                                      │
 │    "filename": "Welcome.jsx",                                           │
 │    "directory":                                                         │
-│  "F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src"  │
+│  "AI_Agent/ai-demo-login/src"  │
 │  ,                                                                      │
 │    "overwrite": "true",                                                 │
 │    "content": "import React from 'react';\\n\\nconst Welcome = () => {\\n  │
@@ -178,7 +178,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 ╭────────────────────────────── Tool Output ──────────────────────────────╮
 │                                                                         │
 │  Content successfully written to                                        │
-│  F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src\\W  │
+│  AI_Agent/ai-demo-login/src\\W  │
 │  elcome.jsx                                                             │
 │                                                                         │
 ╰─────────────────────────────────────────────────────────────────────────╯
@@ -213,7 +213,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 │  {                                                                      │
 │    "filename": "App.jsx",                                               │
 │    "directory":                                                         │
-│  "F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src"  │
+│  "AI_Agent/ai-demo-login/src"  │
 │  ,                                                                      │
 │    "overwrite": "true",                                                 │
 │    "content": "import React, { useState } from 'react';\\nimport Login   │
@@ -229,7 +229,7 @@ DEBUG: BASE_PATH set to: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-de
 ╭────────────────────────────── Tool Output ──────────────────────────────╮
 │                                                                         │
 │  Content successfully written to                                        │
-│  F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src\\A  │
+│  AI_Agent/ai-demo-login/src\\A  │
 │  pp.jsx                                                                 │
 │                                                                         │
 ╰─────────────────────────────────────────────────────────────────────────╯
@@ -266,7 +266,7 @@ Giai đoạn 2 hoàn tất. Nghỉ 70s để tránh giới hạn API...
 │  {                                                                      │
 │    "filename": "Login.test.js",                                         │
 │    "directory":                                                         │
-│  "F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src"  │
+│  "AI_Agent/ai-demo-login/src"  │
 │  ,                                                                      │
 │    "overwrite": "true",                                                 │
 │    "content": "import React from 'react';\\nimport { render, fireEvent,  │
@@ -290,7 +290,7 @@ Giai đoạn 2 hoàn tất. Nghỉ 70s để tránh giới hạn API...
 ╭────────────────────────────── Tool Output ──────────────────────────────╮
 │                                                                         │
 │  Content successfully written to                                        │
-│  F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src\\L  │
+│  AI_Agent/ai-demo-login/src\\L  │
 │  ogin.test.js                                                           │
 │                                                                         │
 ╰─────────────────────────────────────────────────────────────────────────╯
@@ -303,5 +303,5 @@ Giai đoạn 2 hoàn tất. Nghỉ 70s để tránh giới hạn API...
 
 ######################
 QUY TRÌNH HOÀN THÀNH!
-Các file đã được tạo thành công trong thư mục: F:/Learning/University/4th_year/New_tech/AI_Agent/ai-demo-login/src/
+Các file đã được tạo thành công trong thư mục: AI_Agent/ai-demo-login/src/
 ```
