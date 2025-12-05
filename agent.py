@@ -85,8 +85,8 @@ task_design = Task(
 crew_phase_1 = Crew(agents=[architect], tasks=[task_design], verbose=True)
 result_design = crew_phase_1.kickoff()
 
-print("Giai đoạn 1 hoàn tất. Nghỉ 60s...")
-time.sleep(60)
+print("Giai đoạn 1 hoàn tất. Nghỉ 70s...")
+time.sleep(70)
 
 # --- GIAI ĐOẠN 2: VIẾT CODE ---
 print("\n--- GIAI ĐOẠN 2: React Developer đang viết code... ---")
@@ -112,8 +112,8 @@ task_login = Task(
 crew_2_1 = Crew(agents=[developer], tasks=[task_login], verbose=True)
 crew_2_1.kickoff()
 
-print("   > Nghỉ 60s...")
-time.sleep(60)
+print("   > Nghỉ 70s...")
+time.sleep(70)
 
 # 2.2 Viết Welcome.jsx
 print("   > Đang viết Welcome.jsx...")
@@ -135,8 +135,8 @@ task_welcome = Task(
 crew_2_2 = Crew(agents=[developer], tasks=[task_welcome], verbose=True)
 crew_2_2.kickoff()
 
-print("   > Nghỉ 60s...")
-time.sleep(60)
+print("   > Nghỉ 70s...")
+time.sleep(70)
 
 # 2.3 Viết App.jsx
 print("   > Đang viết App.jsx...")
@@ -158,8 +158,8 @@ task_app = Task(
 crew_2_3 = Crew(agents=[developer], tasks=[task_app], verbose=True)
 result_coding = crew_2_3.kickoff()
 
-print("Giai đoạn 2 hoàn tất. Nghỉ 60s để tránh giới hạn API...")
-time.sleep(60)
+print("Giai đoạn 2 hoàn tất. Nghỉ 70s để tránh giới hạn API...")
+time.sleep(70)
 
 # --- GIAI ĐOẠN 3: KIỂM THỬ ---
 print("\n--- GIAI ĐOẠN 3: QA Engineer đang viết test... ---")
@@ -183,8 +183,8 @@ task_testing = Task(
 crew_phase_3 = Crew(agents=[qa_tester], tasks=[task_testing], verbose=True)
 result_testing = crew_phase_3.kickoff()
 
-print("Giai đoạn 3 hoàn tất. Nghỉ 60s...")
-time.sleep(60)
+print("Giai đoạn 3 hoàn tất. Nghỉ 70s...")
+time.sleep(70)
 
 print("\n######################")
 print("QUY TRÌNH HOÀN THÀNH!")

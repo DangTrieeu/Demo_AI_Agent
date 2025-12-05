@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
-import Login from './Login';
-import Welcome from './Welcome';
+
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      {isLoggedIn ? <Welcome /> : <Login onLogin={handleLogin} />}
+    <div>
+      <h1>Welcome to the AI Demo Login App</h1>
     </div>
   );
 };
